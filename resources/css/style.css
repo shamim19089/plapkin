@@ -1,0 +1,562 @@
+/*
+Template Name: Paul Lapkin
+Template URI: https://www.moshiur.dev/projects/paul-lapkin/
+Author: Moshiur
+Author URI: https://moshiur.me
+Version: 1.0
+Description: A simple personal portfolio template.
+*/
+
+/* ================================
+
+CSS Index
+---------
+
+1. Common CSS
+2. Reusable Components
+3. Header Section
+4. About Section
+5. Process Section
+6. Experience Section
+7. Work Section
+8. Testimonial Section
+9. Contact Section
+10. Footer
+
+================================= */
+
+/* Common CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* scroll-behavior: smooth; */
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fff;
+    line-height: 1.5;
+    font-weight: 400;
+    font-size: 1.6rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+}
+
+h1,
+h3,
+h4 {
+    color: #fff;
+}
+
+h3 {
+    font-size: 2.6rem;
+    margin-bottom: 3rem;
+}
+
+h4 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+p {
+    margin: 2rem 0;
+}
+
+hr {
+    border: 0;
+    border-bottom: .1rem solid #fff;
+    margin: 3rem 0;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+/* Reusable Componenets */
+
+.container {
+    max-width: 114rem;
+    margin: 0 auto;
+}
+
+.clearfix::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+section {
+    padding: 12rem 0;
+}
+.btn,
+.btn:link,
+.btn:active {
+    text-decoration: none;
+    text-transform: capitalize;
+    background-color: #ff2b4a;
+    border: .1rem solid #ff2b4a;
+    color: #fff;
+    width: 20rem;
+    padding: 1.5rem 0;
+    display: inline-block;
+    text-align: center;
+    transition: all .1s;
+}
+
+.btn-full,
+.form-submit-btn {
+    background-color: #ff2b4a;
+    border-color: #ff2b4a;
+    color:#fff;
+    cursor: pointer;
+}
+
+.btn-full:hover,
+.form-submit-btn:hover {
+    background-color: transparent;
+    color: #ff2b4a;
+}
+
+.section-title {
+    margin-bottom: 6rem;
+    text-align: center;
+}
+
+.section-title h2 {
+    font-size: 4rem;
+}
+
+/* ===================
+
+Header Section
+
+==================== */
+
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url(img/hero.jpg) no-repeat center top / cover;
+    position: relative;
+}
+
+#navbar {
+    padding: 4.5rem 0;
+    z-index: 9999;
+}
+
+.logo-area {
+    float: left;
+}
+
+.menu-area {
+    float: right;
+}
+
+.menu-area a svg {
+    width: 4rem;
+    height: 4rem;
+    border: .1rem solid #fff;
+}
+
+.hero-text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:#fff;
+}
+
+.heading-primary-title {
+    font-size: 6.5rem;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    display: inline-block;
+}
+
+.heading-primary-title::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: .1rem;
+    background-color: #fff;
+}
+
+.heading-primary-title::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: .1rem;
+    background-color: #fff;
+}
+
+.heading-primary-subtitle {
+    display: block;
+    margin-top: 1rem;
+    font-size: 2.2rem;
+}
+
+.scroll-down {
+    text-align: center;
+}
+.scroll-down a{
+    position: absolute;
+    bottom: 4.5rem;
+    width: 4rem;
+    height: 4rem;
+  
+}
+
+.scroll-down a svg {
+    position: relative;
+    animation: arrow 2s infinite ease-in-out;
+    -webkit-animation: arrow 2s infinite ease-in-out;
+}
+
+#particles-js  {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Sticky Menu */
+nav.uk-sticky-fixed{
+    top: 0 !important;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+#navbar .uk-sticky-fixed{
+    padding: 2.5rem 0;
+
+}
+/* Animation */
+@keyframes arrow{
+    0%{
+        top: 1rem;
+    }
+    75%{
+        top: 3rem;
+    }
+    100%{
+        top: 1rem;
+    }
+}
+/* hamburger Menu */
+.menu-container{
+    background-color: rgba(0, 0, 0, 0.95);
+    width: 0%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 9999;
+}
+.hb-menu{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    list-style: none;
+    text-align: center;
+}
+.hb-menu li a{
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    text-decoration: none;
+    margin: .2rem 0;
+    display: inline-block;
+}
+.close-btn a ion-icon{
+    color: #fff;
+    font-size: 4rem;
+    position: absolute;
+    top: 4rem;
+    right: 4rem;
+
+}
+
+/* ===================
+
+About Section
+
+==================== */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 6rem;
+}
+
+.about-grid-item img {
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+}
+
+.about-desciption .paul {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+/* ===================
+
+Process Section
+
+==================== */
+
+.process {
+    background-color: #f6f6f6;
+    text-align: center;
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1.5rem;
+}
+
+.process-grid-item {
+    background-color: #000;
+    color: #fff;
+    padding: 8.5rem 0;
+}
+
+.process-grid-item ion-icon {
+    font-size: 4.5rem;
+    margin-bottom: 2rem;
+}
+
+.process-grid-item h4 {
+    text-transform: uppercase;
+}
+
+.process-grid-item:nth-child(1) {
+    background-color: #10c6fc;
+}
+
+.process-grid-item:nth-child(2) {
+    background-color: #835aeb;
+}
+
+.process-grid-item:nth-child(3) {
+    background-color: #002453;
+}
+
+.process-grid-item:nth-child(4) {
+    background-color: #ff2b4a;
+}
+
+/* ===================
+
+Experience Section
+
+==================== */
+
+.experience {
+    background: #000 url(img/experience.jpg) no-repeat center top / cover fixed;
+}
+
+.exp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1.5rem;
+}
+
+.exp-grid-item {
+    background-color: rgba(0,0,0,0.7);
+    color: #fff;
+    padding: 3rem 1.5rem;
+}
+
+/* ===================
+
+Work Section
+
+==================== */
+
+.work-filter {
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.work-filter button {
+    background-color: #000;
+    color: #fff;
+    border: .1rem solid #000;
+    text-transform: capitalize;
+    padding: .5rem 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+}
+
+.work-grid-item {
+    height: 24rem;
+}
+
+.work-grid-item img {
+    width: 100%;
+    height: 100%;
+}
+
+.work-grid-item:nth-child(5) {
+    grid-column: 1/3;
+}
+.work-grid .uk-icon svg{
+    display: none !important;
+}
+
+/* Mixitup */
+.work-filter .mixitup-control-active {
+    background: #ff2b4a;
+    border-color: #ff2b4a;
+}
+
+/* ===================
+
+Testimonial Section
+
+==================== */
+
+#testimonial {
+    background: url(img/testimonial.jpg) no-repeat center top / cover;
+}
+
+.tm-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.tm-grid-item p {
+    width: 90%;
+}
+
+.tm-grid-item h4 {
+    margin-bottom: 0;
+    color: #222;
+}
+
+/* ===================
+
+Contact Section
+
+==================== */
+
+#contact {
+    background: #000 url(img/contact.jpg) center / cover fixed;
+}
+
+.ct-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1.5rem;
+    color: #fff;
+}
+
+.ct-grid-item:nth-child(1),
+.nested-ct-grid-item  {
+    background-color: rgba(0,0,0,0.8);
+    padding: 2rem 3.5rem;
+}
+
+.ct-grid-item h3 {
+    text-transform: uppercase;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    margin: 1rem 0;
+    background: transparent;
+    border: .1rem solid #fff;
+    color: #fff;
+    padding: 1rem 1.5rem;
+    font-size: 1.6rem;
+}
+
+form textarea {
+    font-family: 'Roboto', sans-serif;
+    height: 20rem;
+}
+
+.form-submit {
+    text-align: right;
+    margin: 3rem 0;
+}
+
+.nested-ct-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+}
+
+/* ===================
+
+Footer Section
+
+==================== */
+
+footer {
+    background-color: #222222;
+    padding: 3rem 0;
+    text-align: center;
+    color: #fff;
+}
+
+.social-icons {
+    margin-bottom: 1.5rem;
+}
+
+.social-icons ul li {
+    display: inline-block;
+    list-style-type: none;
+}
+
+.social-icons ul li a {
+    text-decoration: none;
+}
+
+.social-icons ul li a ion-icon {
+    color: #fff;
+    font-size: 2rem;
+}
+
+.social-icons ul li:not(:last-child) a ion-icon {
+    border-right: .1rem solid #fff;
+    padding: 0 1rem;
+}
+
+.scrolltop {
+    margin-top: 1.5rem;
+}
+
+/* Lightbox */
+.uk-lightbox {
+    background: rgba(0,0,0,0.7);
+}
+/* chechk */
+
+
+                    
